@@ -1,0 +1,107 @@
+page-chatroom {
+  .innerMessage{
+    display: inline-block;
+    padding : 5px 10px;
+    background: color($colors , 'primary');
+    border-radius: 6px;
+    color : white;
+  }
+  .messageRight{
+    background: lightgreen;
+    float : right;
+    display: inline-block;
+    padding : 5px 10px;
+    border-radius: 6px;
+    color : black;
+
+  }
+  .username{
+    font-size : 0.75em;
+    font-weight: bold;
+    color : rebeccapurple;
+  }
+  div#footer div.elem:first-child{
+    flex-grow : 1;
+  }
+  div#footer{
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  ion-toolbar{
+    margin : 0;
+    padding : 0!important;
+  }
+  .button{
+    padding :0;
+    margin:0;
+    min-width: 45px;
+  }
+
+  #input{
+    height : inherit;
+    margin-left: 10px ;
+    padding-top: 0.05em;
+  }
+  ion-input{
+    line-height: 34px;
+    font-size: 125%;
+  }
+  .text-input-ios{
+    margin:0;
+    padding-top: 7px;
+  }
+  .text-input-md{
+    margin:0;
+  }
+  .button-default-ios{
+    min-height:45px;
+  }
+
+  .button-default-md{
+    min-height:40px;
+  }
+
+
+  .messageLeft{
+    float : left;
+    display: inline-block;
+    padding : 5px 10px;
+    background: color($colors , 'primary');
+    border-radius: 6px;
+    color : white;
+  }
+
+
+  .someoneJoined{
+    font-size: 80%;
+    width : 100%;
+    float:none;
+    text-align: center;
+    position: relative;
+  }
+
+  .someoneJoined .messageContent{
+    background: white;
+    display: inline-block;
+    padding: 0 5px;
+  }
+  .someoneJoined:after{
+    content: '';
+    height : 1.5px;
+    background: #eee;
+    display: block;
+    top:50%;
+    left:0;
+    width:100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .message:after{
+    content:'';
+    display: block;
+    clear : both;
+  }
+}
