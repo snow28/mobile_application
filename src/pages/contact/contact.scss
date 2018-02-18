@@ -1,3 +1,19 @@
 page-contact {
-
+  .send-message{
+    margin-top: 40px;
+    &__header{
+      color: red;
+      margin-bottom: 0;
+    }
+    &__send{
+      text-align: center;
+      margin-top: 10px;
+      button{
+        min-width: 100px;
+      }
+    }
+    &__textarea{
+      min-height: 75px;
+    }
+  }
 }
