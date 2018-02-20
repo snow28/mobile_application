@@ -1,17 +1,40 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Weather</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <!--Here we will use if statement (bcs of async) to render this element before we will retrieve json from server-->
+  <div *ngIf="!!weather" class="weather">
+    <h1>Lodz</h1>
+    <ul class="weather__list">
+      <li class="weather__temp">
+        <img class="weather__temp_item" src="{{weather.current.condition.icon}}">
+        <p class="weather__temp_item">{{weather.current.temp_c}}</p>
+      </li>
+      <li class="weather__list-item">
+        <p>Humidity: &nbsp;&nbsp; <span>{{weather.current.humidity}} </span></p>
+      </li>
+      <li class="weather__list-item">
+        <p>Pressure in mb : &nbsp;&nbsp;<span>{{weather.current.pressure_mb}}</span></p>
+      </li>
+      <li class="weather__list-item">
+        <p>Wind speed: &nbsp;&nbsp;<span>{{weather.current.wind_kph}} kph</span></p>
+      </li>
+      <li class="weather__list-item">
+        <p>Wind direction: &nbsp;&nbsp; <span>{{weather.current.wind_dir}} </span></p>
+      </li>
+      <li class="weather__list-item">
+        <p>Latitude: &nbsp;&nbsp; <span>{{weather.location.lat}} </span></p>
+      </li>
+      <li class="weather__list-item">
+        <p>Longitude: &nbsp;&nbsp; <span>{{weather.location.lon}} </span></p>
+      </li>
+      <li class="weather__list-item">
+        <p>Local time: &nbsp;&nbsp; <span>{{weather.location.localtime}} </span></p>
+      </li>
+    </ul>
+    <p class="weather__updated">Last update:  {{weather.current.last_updated}}</p>
+  </div>
 </ion-content>
